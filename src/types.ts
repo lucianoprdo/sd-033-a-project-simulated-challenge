@@ -27,3 +27,8 @@ export type NewsIBGE = {
     },
   ]
 };
+
+export type ActionType = {
+  type: string;
+  payload: number;
+};
