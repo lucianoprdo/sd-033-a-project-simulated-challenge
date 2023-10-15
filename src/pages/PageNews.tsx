@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NewsIBGE } from '../types';
 import { fetchNewsData } from '../redux/actions/newsAction';
+import Loading from '../components/Loading';
 
 function PageNews() {
   const dispatch = useDispatch();
@@ -15,7 +16,7 @@ function PageNews() {
   return (
     <div>
       <h1>Notícias do IBGE</h1>
-      {isLoading && <div>Carregando...</div>}
+      {isLoading && <Loading />}
       {news && (
         <ul>
           {news.items.map((item) => (
