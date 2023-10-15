@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import './Counter.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { GlobalState } from '../types';
-import { counterAction } from '../redux/actions/counterAction';
+import { counterAction } from '../redux/actions/newsAction';
 
 function Counter() {
   const counterState = useSelector((state: GlobalState) => state.counterReducer);
