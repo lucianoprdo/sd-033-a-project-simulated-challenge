@@ -1,17 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { NewsIBGE } from '../types';
 import { fetchNewsData } from '../redux/actions/newsAction';
 import Loading from '../components/Loading';
 
 function PageNews() {
   const dispatch = useDispatch();
-  const [news, setNews] = useState<NewsIBGE>();
-  const isLoading = useSelector((state) => state.news.isLoading);
+  const news = useSelector((state: any) => state.news.news);
+  const isLoading = useSelector((state: any) => state.news.isLoading);
 
   useEffect(() => {
-    fetchNewsData()(dispatch);
-  }, []);
+    dispatch(fetchNewsData());
+  }, [dispatch]);
 
   return (
     <div>
@@ -19,7 +18,7 @@ function PageNews() {
       {isLoading && <Loading />}
       {news && (
         <ul>
-          {news.items.map((item) => (
+          {news.items.map((item: any) => (
             <li key={ item.id }>
               <h2>{item.titulo}</h2>
               <p>{item.introducao}</p>
