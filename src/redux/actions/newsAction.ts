@@ -8,12 +8,12 @@ export interface FetchNewsRequestAction {
 
 export interface FetchNewsSuccessAction {
   type: 'FETCH_NEWS_SUCCESS';
-  payload: any; // Defina o tipo apropriado para os dados
+  payload: any; // Definir o tipo apropriado para os dados
 }
 
 export interface FetchNewsFailureAction {
   type: 'FETCH_NEWS_FAILURE';
-  payload: any; // Defina o tipo apropriado para o erro
+  payload: any; // Definir o tipo apropriado para o erro
 }
 
 export type NewsAction =

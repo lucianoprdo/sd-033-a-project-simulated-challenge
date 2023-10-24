@@ -5,11 +5,11 @@ import Loading from '../components/Loading';
 
 function PageNews() {
   const dispatch = useDispatch();
-  const news = useSelector((state: any) => state.news.news);
+  const news = useSelector((state: any) => state.news);
   const isLoading = useSelector((state: any) => state.news.isLoading);
 
   useEffect(() => {
-    dispatch(fetchNewsData());
+    dispatch(fetchNewsData() as any);
   }, [dispatch]);
 
   return (
@@ -22,7 +22,7 @@ function PageNews() {
             <li key={ item.id }>
               <h2>{item.titulo}</h2>
               <p>{item.introducao}</p>
-              <a href={ item.link }>Leia mais</a>
+              <a href={ item.link }>Leia mais...</a>
             </li>
           ))}
         </ul>
